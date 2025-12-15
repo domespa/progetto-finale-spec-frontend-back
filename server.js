@@ -23,7 +23,7 @@ app.use(
   cors({
     origin: [
       "*",
-      "https://progetto-finale-spec-frontend-front-jade.vercel.app/",
+      "https://progetto-finale-spec-frontend-front-jade.vercel.app",
     ],
     credentials: true,
   })
