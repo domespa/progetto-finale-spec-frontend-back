@@ -187,4 +187,21 @@ Promise.all(loadPromises)
     process.exit(1);
   });
 
+// 🔍 DEBUG ROUTE
+app.get("/debug", (req, res) => {
+  const fs = require("fs");
+  const path = require("path");
+
+  res.json({
+    cacheKeys: Object.keys(cache),
+    cacheData: cache,
+    __dirname: __dirname,
+    filesInRoot: fs.readdirSync(__dirname),
+    databaseExists: fs.existsSync(path.join(__dirname, "database")),
+    databaseFiles: fs.existsSync(path.join(__dirname, "database"))
+      ? fs.readdirSync(path.join(__dirname, "database"))
+      : "directory not found",
+  });
+});
+
 export default app;
