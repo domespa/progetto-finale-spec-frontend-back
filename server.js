@@ -21,7 +21,10 @@ app.use(
 );
 app.use(
   cors({
-    origin: "*",
+    origin: [
+      "*",
+      "https://progetto-finale-spec-frontend-front-jade.vercel.app/",
+    ],
     credentials: true,
   })
 );
